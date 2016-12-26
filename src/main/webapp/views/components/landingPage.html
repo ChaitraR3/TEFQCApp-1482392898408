@@ -1,0 +1,169 @@
+<!-- about.html -->
+
+<div id="mydiv">
+	<img src="images/spinner.gif" class="ajax-loader" />
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12" align="center">
+
+			<div class="col-xs-6 col-sm-4">
+				<div class="panel panel-default col-md-12">
+
+					<div class="panel-body">
+						<form role="form" method="GET" enctype="multipart/form-data" action="" ng-submit="go()">
+							<div class="form-group">
+								<label for="defectId">Enter Defect Id</label> <input type="text"
+									class="form-control" ng-model="DefectId"
+									placeholder="Defect Id"> </br>
+								<button style="width: 290px"
+									ng-click='retrieveDefectDetailsForDefectId()' type="submit"
+									class="btn btn-primary">Find defect details for defect
+									Id</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 col-sm-4">
+				<div class="panel panel-default col-md-12">
+
+					<div class="panel-body">
+						<form role="form" method="GET" enctype="multipart/form-data" action="" ng-submit="go()">
+							<div class="form-group">
+								<label for="PersonName">Enter Person Name</label> <input
+									type="text" class="form-control" ng-model="PersonName"
+									placeholder="Person Name"> </br>
+								<button style="width: 290px"
+									ng-click='retrieveDefectDetailsForPerson()' type="submit"
+									class="btn btn-primary">Find defect details for Person</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 col-sm-4">
+				<div class="panel panel-default col-md-12">
+
+					<div class="panel-body">
+						<form role="form" method="GET" enctype="multipart/form-data" action="" ng-submit="go()">
+							<div class="form-group">
+								<label for="ComponentName">Enter Component Name</label> <input
+									type="text" class="form-control" ng-model="ImpactedComponent"
+									placeholder="Component Name"> </br>
+								<button style="width: 290px"
+									ng-click='retrieveDefectDetailsForImpactedComponent()'
+									type="submit" class="btn btn-primary">Find defect
+									details for Component</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="col-md-12" ng-show="true">
+				<div class="table-responsive">
+
+					<div ng-show="!showIt">
+						<div>
+							<table class="table table-striped table-bordered">
+								<thead ng-show="showHeader">
+									<tr>
+										<th>DefectID</th>
+										<th>Summary</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-ng-repeat="p in qclist"
+										ng-click="getDefectDetails(p.DefectID)">
+										<td>{{p.DefectID}}</td>
+										<td>{{p.Summary}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<pagination total-items="count" ng-model="currentPage"
+						ng-show="showPages" max-size="10" boundary-links="true"
+						items-per-page="numPerPage" class="pagination-sm"
+						ng-click="getCurrentPageValue(currentPage)"> </pagination>
+
+				</div>
+				<div class="col-md-14" ng-show="showIt">
+					<div id="demo">
+						<table class="table table-striped table-bordered">
+
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>DefectID</th>
+								<td>{{id.DefectID}}</td>
+							</tr>
+
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>Status</th>
+								<td>{{id.Status}}</td>
+							</tr>
+
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>Description</th>
+								<td>
+									<div style="width: 100%; max-height: 300px; overflow: auto">{{id.Description}}</div>
+								</td>
+							</tr>
+
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>DetectedBy</th>
+								<td>{{id.DetectedBy}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>Attachment</th>
+								<td>{{id.Attachment}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>WorkStreamId</th>
+								<td>{{id.WorkStreamId}}</td>
+
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>DefectReason</th>
+								<td>{{id.DefectReason}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>AssignedTo</th>
+								<td>{{id.AssignedTo}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>O2</th>
+								<td>{{id.O2}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>ImpactedComponent</th>
+								<td>{{id.ImpactedComponent}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>Summary</th>
+								<td>{{id.Summary}}</td>
+							</tr>
+							<tr data-ng-repeat="id in defectIdlist">
+								<th>Priority</th>
+								<td>{{id.Priority}}</td>
+							</tr>
+
+						</table>
+
+					</div>
+					<button type="button" ng-click="hideIt()">Show List</button>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
