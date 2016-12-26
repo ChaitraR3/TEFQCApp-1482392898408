@@ -136,6 +136,7 @@
 		<dependency>
         <groupId>javax.ws.rs</groupId>
    	 	<artifactId>javax.ws.rs</artifactId>
+   	 	<version>1.0</version>
    	 	<scope>system</scope>     
         <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/javax.ws.rs.jar</systemPath>
      	</dependency> 
@@ -143,6 +144,7 @@
 		<dependency>
         <groupId>jackson.annotations</groupId>
    	 	<artifactId>jackson.annotations</artifactId>
+   	 	<version>1.0</version>
    	 	<scope>system</scope>     
         <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/com.fasterxml.jackson.annotations.jar</systemPath>
      	</dependency> 
@@ -150,6 +152,7 @@
 		<dependency>
         <groupId>jackson.core</groupId>
    	 	<artifactId>jackson.core</artifactId>
+   	 	 <version>1.0</version>
    	 	<scope>system</scope>     
         <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/com.fasterxml.jackson.core.jar</systemPath>
      	</dependency> 
